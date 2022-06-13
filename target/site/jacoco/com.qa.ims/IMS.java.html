@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>IMS.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ims</a> &gt; <a href="index.source.html" class="el_package">com.qa.ims</a> &gt; <span class="el_source">IMS.java</span></div><h1>IMS.java</h1><pre class="source lang-java linenums">package com.qa.ims;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.qa.ims.controller.Action;
+import com.qa.ims.controller.CrudController;
+import com.qa.ims.controller.CustomerController;
+import com.qa.ims.persistence.dao.CustomerDAO;
+import com.qa.ims.persistence.domain.Domain;
+import com.qa.ims.utils.DBUtils;
+import com.qa.ims.utils.Utils;
+
+public class IMS {
+
+<span class="nc" id="L16">	public static final Logger LOGGER = LogManager.getLogger();</span>
+
+	private final CustomerController customers;
+	private final Utils utils;
+
+<span class="nc" id="L21">	public IMS() {</span>
+<span class="nc" id="L22">		this.utils = new Utils();</span>
+<span class="nc" id="L23">		final CustomerDAO custDAO = new CustomerDAO();</span>
+<span class="nc" id="L24">		this.customers = new CustomerController(custDAO, utils);</span>
+<span class="nc" id="L25">	}</span>
+
+	public void imsSystem() {
+<span class="nc" id="L28">		LOGGER.info(&quot;Welcome to the Inventory Management System!&quot;);</span>
+<span class="nc" id="L29">		DBUtils.connect();</span>
+
+<span class="nc" id="L31">		Domain domain = null;</span>
+		do {
+<span class="nc" id="L33">			LOGGER.info(&quot;Which entity would you like to use?&quot;);</span>
+<span class="nc" id="L34">			Domain.printDomains();</span>
+
+<span class="nc" id="L36">			domain = Domain.getDomain(utils);</span>
+
+<span class="nc" id="L38">			domainAction(domain);</span>
+
+<span class="nc bnc" id="L40" title="All 2 branches missed.">		} while (domain != Domain.STOP);</span>
+<span class="nc" id="L41">	}</span>
+
+	private void domainAction(Domain domain) {
+<span class="nc" id="L44">		boolean changeDomain = false;</span>
+		do {
+
+<span class="nc" id="L47">			CrudController&lt;?&gt; active = null;</span>
+<span class="nc bnc" id="L48" title="All 5 branches missed.">			switch (domain) {</span>
+			case CUSTOMER:
+<span class="nc" id="L50">				active = this.customers;</span>
+<span class="nc" id="L51">				break;</span>
+			case ITEM:
+<span class="nc" id="L53">				break;</span>
+			case ORDER:
+<span class="nc" id="L55">				break;</span>
+			case STOP:
+<span class="nc" id="L57">				return;</span>
+			default:
+				break;
+			}
+
+<span class="nc" id="L62">			LOGGER.info(() -&gt;&quot;What would you like to do with &quot; + domain.name().toLowerCase() + &quot;:&quot;);</span>
+
+<span class="nc" id="L64">			Action.printActions();</span>
+<span class="nc" id="L65">			Action action = Action.getAction(utils);</span>
+
+<span class="nc bnc" id="L67" title="All 2 branches missed.">			if (action == Action.RETURN) {</span>
+<span class="nc" id="L68">				changeDomain = true;</span>
+			} else {
+<span class="nc" id="L70">				doAction(active, action);</span>
+			}
+<span class="nc bnc" id="L72" title="All 2 branches missed.">		} while (!changeDomain);</span>
+<span class="nc" id="L73">	}</span>
+
+	public void doAction(CrudController&lt;?&gt; crudController, Action action) {
+<span class="nc bnc" id="L76" title="All 6 branches missed.">		switch (action) {</span>
+		case CREATE:
+<span class="nc" id="L78">			crudController.create();</span>
+<span class="nc" id="L79">			break;</span>
+		case READ:
+<span class="nc" id="L81">			crudController.readAll();</span>
+<span class="nc" id="L82">			break;</span>
+		case UPDATE:
+<span class="nc" id="L84">			crudController.update();</span>
+<span class="nc" id="L85">			break;</span>
+		case DELETE:
+<span class="nc" id="L87">			crudController.delete();</span>
+<span class="nc" id="L88">			break;</span>
+		case RETURN:
+<span class="nc" id="L90">			break;</span>
+		default:
+			break;
+		}
+<span class="nc" id="L94">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

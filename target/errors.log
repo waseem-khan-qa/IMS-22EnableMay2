@@ -1,0 +1,38 @@
+20220608 23:52:31 INFO  [main] ims.IMS IMS.java28 - Welcome to the Inventory Management System!
+20220608 23:52:31 INFO  [main] ims.IMS IMS.java33 - Which entity would you like to use?
+20220608 23:52:31 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
+20220608 23:52:31 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
+20220608 23:52:31 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
+20220608 23:52:31 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
+20220608 23:52:36 INFO  [main] ims.IMS IMS.java62 - What would you like to do with customer:
+20220608 23:52:36 INFO  [main] controller.Action Action.java38 - CREATE: To save a new entity into the database
+20220608 23:52:36 INFO  [main] controller.Action Action.java38 - READ: To read an entity from the database
+20220608 23:52:36 INFO  [main] controller.Action Action.java38 - UPDATE: To change an entity already in the database
+20220608 23:52:36 INFO  [main] controller.Action Action.java38 - DELETE: To remove an entity from the database
+20220608 23:52:36 INFO  [main] controller.Action Action.java38 - RETURN: To return to domain selection
+20220608 23:52:46 DEBUG [main] dao.CustomerDAO CustomerDAO.java45 - com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+20220608 23:52:46 ERROR [main] dao.CustomerDAO CustomerDAO.java46 - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+20220608 23:52:46 INFO  [main] ims.IMS IMS.java62 - What would you like to do with customer:
+20220608 23:52:46 INFO  [main] controller.Action Action.java38 - CREATE: To save a new entity into the database
+20220608 23:52:46 INFO  [main] controller.Action Action.java38 - READ: To read an entity from the database
+20220608 23:52:46 INFO  [main] controller.Action Action.java38 - UPDATE: To change an entity already in the database
+20220608 23:52:46 INFO  [main] controller.Action Action.java38 - DELETE: To remove an entity from the database
+20220608 23:52:46 INFO  [main] controller.Action Action.java38 - RETURN: To return to domain selection
+20220608 23:53:11 DEBUG [main] dao.CustomerDAO CustomerDAO.java45 - java.sql.SQLSyntaxErrorException: Unknown database 'ims'
+20220608 23:53:11 ERROR [main] dao.CustomerDAO CustomerDAO.java46 - Unknown database 'ims'
+20220608 23:53:11 INFO  [main] ims.IMS IMS.java62 - What would you like to do with customer:
+20220608 23:53:11 INFO  [main] controller.Action Action.java38 - CREATE: To save a new entity into the database
+20220608 23:53:11 INFO  [main] controller.Action Action.java38 - READ: To read an entity from the database
+20220608 23:53:11 INFO  [main] controller.Action Action.java38 - UPDATE: To change an entity already in the database
+20220608 23:53:11 INFO  [main] controller.Action Action.java38 - DELETE: To remove an entity from the database
+20220608 23:53:11 INFO  [main] controller.Action Action.java38 - RETURN: To return to domain selection
+20220608 23:54:41 INFO  [main] ims.IMS IMS.java33 - Which entity would you like to use?
+20220608 23:54:41 INFO  [main] domain.Domain Domain.java27 - CUSTOMER: Information about customers
+20220608 23:54:41 INFO  [main] domain.Domain Domain.java27 - ITEM: Individual Items
+20220608 23:54:41 INFO  [main] domain.Domain Domain.java27 - ORDER: Purchases of items
+20220608 23:54:41 INFO  [main] domain.Domain Domain.java27 - STOP: To close the application
+20220608 23:54:43 INFO  [main] ims.Runner Runner.java13 - SO LONG!

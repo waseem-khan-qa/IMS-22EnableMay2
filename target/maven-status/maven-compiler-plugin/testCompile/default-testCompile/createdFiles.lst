@@ -1,0 +1,3 @@
+com\qa\ims\persistence\domain\CustomerTest.class
+com\qa\ims\controllers\CustomerControllerTest.class
+com\qa\ims\persistence\dao\CustomerDAOTest.class

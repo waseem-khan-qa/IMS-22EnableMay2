@@ -1,0 +1,38 @@
+20220613 01:39:27 INFO  [main] controller.CustomerController CustomerController.java36 - id:1 first name:jordan surname:harrison
+20220613 01:39:27 INFO  [main] controller.CustomerController CustomerController.java46 - Please enter a first name
+20220613 01:39:27 INFO  [main] controller.CustomerController CustomerController.java48 - Please enter a surname
+20220613 01:39:27 INFO  [main] controller.CustomerController CustomerController.java51 - Customer created
+20220613 01:39:27 INFO  [main] controller.CustomerController CustomerController.java78 - Please enter the id of the customer you would like to delete
+20220613 01:39:27 INFO  [main] controller.CustomerController CustomerController.java60 - Please enter the id of the customer you would like to update
+20220613 01:39:27 INFO  [main] controller.CustomerController CustomerController.java62 - Please enter a first name
+20220613 01:39:27 INFO  [main] controller.CustomerController CustomerController.java64 - Please enter a surname
+20220613 01:39:27 INFO  [main] controller.CustomerController CustomerController.java67 - Customer Updated
+20220613 01:39:27 INFO  [main] controller.ItemController ItemController.java31 - id:1 name:laptop value:10.0
+20220613 01:39:27 INFO  [main] controller.ItemController ItemController.java41 - Please enter item name
+20220613 01:39:27 INFO  [main] controller.ItemController ItemController.java43 - Please enter item price
+20220613 01:39:27 INFO  [main] controller.ItemController ItemController.java46 - Item created
+20220613 01:39:27 INFO  [main] controller.ItemController ItemController.java73 - Please enter the id of the item you would like to delete
+20220613 01:39:27 INFO  [main] controller.ItemController ItemController.java55 - Please enter the id of the item you would like to update
+20220613 01:39:27 INFO  [main] controller.ItemController ItemController.java57 - Please enter item name
+20220613 01:39:27 INFO  [main] controller.ItemController ItemController.java59 - Please enter item value
+20220613 01:39:27 INFO  [main] controller.ItemController ItemController.java62 - Customer Updated
+20220613 01:39:27 INFO  [main] controller.OrderController OrderController.java38 - id:null customer:{id:null first name:jordan surname:harrison} Items:id:null name:laptop value:10.0, 
+20220613 01:39:27 INFO  [main] controller.OrderController OrderController.java48 - Please enter a customer id
+20220613 01:39:28 DEBUG [main] dao.CustomerDAO CustomerDAO.java95 - java.sql.SQLException: Illegal operation on empty result set.
+20220613 01:39:28 ERROR [main] dao.CustomerDAO CustomerDAO.java96 - Illegal operation on empty result set.
+20220613 01:39:28 INFO  [main] controller.OrderController OrderController.java52 - Customer Doesn't exists
+20220613 01:39:28 INFO  [main] controller.OrderController OrderController.java127 - Please enter the id of the customer you would like to delete
+20220613 01:39:28 INFO  [main] controller.OrderController OrderController.java79 - Please enter the id of the order you would like to select
+20220613 01:39:28 INFO  [main] controller.OrderController OrderController.java81 - What would you like to do with the order?
+20220613 01:39:28 INFO  [main] controller.OrderController OrderController.java83 - ADD: Add Item to an order
+20220613 01:39:28 INFO  [main] controller.OrderController OrderController.java84 - DELETE: Delete Item from an order
+20220613 01:39:28 INFO  [main] controller.OrderController OrderController.java85 - COST: Calculate Cost of an order
+20220613 01:39:28 INFO  [main] controller.OrderController OrderController.java86 - RETURN: To return to perform action
+20220613 01:39:30 DEBUG [main] dao.CustomerDAO CustomerDAO.java137 - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`ims`.`orders`, CONSTRAINT `FK_customer_order` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`))
+20220613 01:39:30 ERROR [main] dao.CustomerDAO CustomerDAO.java138 - Cannot delete or update a parent row: a foreign key constraint fails (`ims`.`orders`, CONSTRAINT `FK_customer_order` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`))
+20220613 01:39:31 DEBUG [main] dao.ItemDAO ItemDAO.java136 - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`ims`.`order_items`, CONSTRAINT `FK_orderItem_item` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`))
+20220613 01:39:31 ERROR [main] dao.ItemDAO ItemDAO.java137 - Cannot delete or update a parent row: a foreign key constraint fails (`ims`.`order_items`, CONSTRAINT `FK_orderItem_item` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`))
+20220613 01:39:33 DEBUG [main] dao.OrderDAO OrderDAO.java106 - java.lang.NullPointerException
+20220613 01:39:33 ERROR [main] dao.OrderDAO OrderDAO.java107 - null
+20220613 01:39:34 DEBUG [main] dao.OrderDAO OrderDAO.java164 - java.lang.NullPointerException
+20220613 01:39:34 ERROR [main] dao.OrderDAO OrderDAO.java165 - null
